@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        public const string FilePath = "H:/віжуалка/WindowsFormsApp1/WindowsFormsApp1/info.txt ";
+        public const string FilePath = "info.txt ";
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -50,6 +50,7 @@ namespace WindowsFormsApp1
                     Convert.ToInt16(textBox5.Text),
                     Convert.ToInt16(textBox6.Text));
 
+
                 StudentVm SomeStudent = new StudentVm(textBox1.Text, SomeMarks);
                 SomeStudent.ToFile();
 
@@ -72,13 +73,13 @@ namespace WindowsFormsApp1
 
         static string ToCheckMarks(StudentVm Students)
         {
-            if (Students.marks.Eng == 4 &&
-                   Students.marks._OOPR == 4 &&
-                   Students.marks._TIMS == 4 &&
-                   Students.marks._MS == 4 &&
-                   Students.marks._DB == 4)
+            if (Students.Marks.English == 4 &&
+                   Students.Marks.OOPR == 4 &&
+                   Students.Marks.TIMS == 4 &&
+                   Students.Marks.MS == 4 &&
+                   Students.Marks.DB == 4)
             {
-                return Students.lastName;
+                return Students.LastName;
             }
             else return null;
         }
@@ -115,7 +116,7 @@ namespace WindowsFormsApp1
                         }
                         else
                         {
-                            TempStudent.lastName = word;
+                            TempStudent.LastName = word;
                         }
 
                     }
@@ -153,12 +154,12 @@ namespace WindowsFormsApp1
 
             for (int i = 0; i < Students.Count; i++)
             {
-                Console.WriteLine(Students[i].lastName + " " +
-                    "english: " + Students[i].marks.Eng +
-                " OOPR: " + Students[i].marks._OOPR +
-                    " TIMS: " + Students[i].marks._TIMS +
-                    " MS: " + Students[i].marks._MS +
-                    " DB: " + Students[i].marks._DB);
+                Console.WriteLine(Students[i].LastName + " " +
+                    "english: " + Students[i].Marks.English +
+                " OOPR: " + Students[i].Marks.OOPR +
+                    " TIMS: " + Students[i].Marks.TIMS +
+                    " MS: " + Students[i].Marks.MS +
+                    " DB: " + Students[i].Marks.DB);
 
             }
             for (int i = 0; i < Students.Count; i++)

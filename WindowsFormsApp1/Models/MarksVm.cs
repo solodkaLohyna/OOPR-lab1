@@ -2,11 +2,11 @@
 {
     public class MarksVm
     {
-        public short DB;
-        public short MS;
-        public short TIMS;
-        public short OOPR;
-        public short English;
+        public short DB { get; set; }
+        public short MS { get; set; }
+        public short TIMS { get; set; }
+        public short OOPR { get; set; }
+        public short English { get; set; }
 
         public MarksVm(short English,
                        short OOPR,
@@ -22,41 +22,5 @@
 
         }
         public MarksVm() { }
-
-        public const string FilePath = "H:/віжуалка/WindowsFormsApp1/WindowsFormsApp1/info.txt ";
-
-        public short Eng
-        {
-            get;
-            set;
-        }
-        public short _OOPR
-        {
-            get;
-            set;
-        }
-        public short _TIMS
-        {
-            get;
-            set;
-        }
-        public short _MS
-        {
-            get;
-            set;
-        }
-        public short _DB
-        {
-            get;
-            set;
-        }
-
-        public void ToFile()
-        {
-            using (System.IO.StreamWriter StreamMarks = new System.IO.StreamWriter(FilePath, true))
-            {
-                StreamMarks.Write(English + " " + OOPR + " " + TIMS + " " + MS + " " + DB + "\t" + "\n");
-            }
-        }
     }
 }
